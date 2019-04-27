@@ -51,6 +51,8 @@
                                     <div class="availability-form">
                                         <div class="form-row align-items-center">
                                             <label class="mr-sm-2" for="inlineFormCustomSelect">Monday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
                                             <select class="custom-select mr-sm-2" id="Monday">
                                                 <option selected>Hours</option>
                                                 <option value="1">8am-5pm</option>
@@ -61,18 +63,90 @@
                                                 <option value="0">Not Available</option>
                                             </select>
                                         </div>
-                                        <label for="Name">Tuesday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Tuesday">
-                                        <label for="Name">Wednesday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Wednesday">
-                                        <label for="Name">Thursday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Thursday">
-                                        <label for="Name">Friday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Friday">
-                                        <label for="Name">Saturday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Saturday">
-                                        <label for="Name">Sunday</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Sunday">
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Tuesday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Tuesday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Wednesday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Wednesday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Thurday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Thursday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Friday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Friday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Saturday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Saturday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Sunday</label>
+                                        </div>
+                                        <div class="form-row align-items-center">
+                                            <select class="custom-select mr-sm-2" id="Sunday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -157,17 +231,20 @@
     console.log("submit clicked")
         var applications = {
         name: $("#name").val(),
-        scores: [$("#questionOne").val(),
-        $("#questionTwo").val(),
-        $("#questionThree").val(),
-        $("#questionFour").val(),
-        $("#questionFive").val(),
-        $("#questionSix").val(),
-        $("#questionSeven").val(),
-        $("#questionEight").val(),
-        $("#questionNine").val(),
-        $("#questionTen").val()
+        position: $("#Position").val(),
+        applied: $("#Applied").val(),
+        experience: $("#Experience").val(),
+        convictedFelon: $("#questionOne").val(),
+        availability: [
+        $("#Monday").val(),
+        $("#Tuesday").val(),
+        $("#Wednesday").val(),
+        $("#Thursday").val(),
+        $("#Friday").val(),
+        $("#Saturday").val(),
+        $("#Sunday").val()
         ]
+
     };
    //console.log(applications[0].name + "this is it")
    console.log(applications.name + "this is it")
@@ -182,16 +259,18 @@
 
         $("#name").val(""),
         $("#questionOne").val("");
-        $("#questionTwo").val("");
-        $("#questionThree").val("");
-        $("#questionFour").val("");
-        $("#questionFive").val("");
-        $("#questionSix").val("");
-        $("#questionSeven").val("");
-        $("#questionEight").val("");
-        $("#questionNine").val("");
-        $("#questionTen").val("");
-
+        $("#position").val("");
+        $("#applied").val("");
+        $("#experience").val("");
+        availability: [
+            $("#Monday").val(),
+            $("#Tuesday").val(),
+            $("#Wednesday").val(),
+            $("#Thursday").val(),
+            $("#Friday").val(),
+            $("#Saturday").val(),
+            $("#Sunday").val()
+        ]
 
         
        
