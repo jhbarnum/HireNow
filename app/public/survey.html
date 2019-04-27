@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="
+      sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" src="HireNow/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="HireNow/server.js"></script>
+    <title>Application Questions</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h3>Application Questions</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <h4>About You</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="input-area" col-md-10>
+                    <div class="input-name">
+                        <form method="POST" role="form">
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Position</label>
+                                <input type="text" class="form-control" id="name" placeholder="Position">
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Applied</label>
+                                <input type="text" class="form-control" id="name" placeholder="Applied">
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Availability</label>
+                                <!-- <input type="text" class="form-control" id="name" placeholder="Availability"> -->
+                                <div class="col-md-8"></div>
+                                    <div class="availability-form">
+                                        <div class="form-row align-items-center">
+                                            <label class="mr-sm-2" for="inlineFormCustomSelect">Monday</label>
+                                            <select class="custom-select mr-sm-2" id="Monday">
+                                                <option selected>Hours</option>
+                                                <option value="1">8am-5pm</option>
+                                                <option value="2">12pm-8pm</option>
+                                                <option value="3">4pm-12am</option>
+                                                <option value="4">12am-8am</option>
+                                                <option value="5">Available All Hours</option>
+                                                <option value="0">Not Available</option>
+                                            </select>
+                                        </div>
+                                        <label for="Name">Tuesday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Tuesday">
+                                        <label for="Name">Wednesday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Wednesday">
+                                        <label for="Name">Thursday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Thursday">
+                                        <label for="Name">Friday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Friday">
+                                        <label for="Name">Saturday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Saturday">
+                                        <label for="Name">Sunday</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Sunday">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                            <!-- <div class="form-group">
+                                <label for="imageSrc">Link to Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="imageSrc" placeholder="Link To Photo Image">
+                            </div> -->
+                            <p>Question 1</p>
+                                <p>Have you ever been convicted of a felony?</p>
+                            <div class="form-row align-items-center">
+                                
+                                    <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
+                                    <select class="custom-select mr-sm-2" id="questionOne">
+                                        <option selected>Choose...</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                
+                            </div>
+
+
+                            <br>
+                            <div class="row"></div>
+                            <button type="submit" class="btn btn-primary" id="submit-button" data-toggle="modal" data-target="#exampleModalLong">Submit</button>
+                            </form>
+
+                            <!-- Button trigger modal -->
+                            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Launch demo modal
+                            </button> -->
+                    </div>
+                </div>
+        </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p>
+            <a href="/api/applications">API Applications List</a>
+            </p>
+        </div>
+    </footer>
+
+    </div>
+
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+        
+            <div class="modal-content">
+                <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">
+                        <strong>New Applicant</strong>
+                    </h2>
+                </div>
+                <div class="modal-body" align="center">
+                    <h2 id="match-name"></h2>
+                    <!-- <img id="match-img" src="" alt="Image Not Found" width="auto"> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    
+    
+   
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+    $("#submit-button").on("click", function (event) {
+            event.preventDefault();
+    console.log("submit clicked")
+        var applications = {
+        name: $("#name").val(),
+        scores: [$("#questionOne").val(),
+        $("#questionTwo").val(),
+        $("#questionThree").val(),
+        $("#questionFour").val(),
+        $("#questionFive").val(),
+        $("#questionSix").val(),
+        $("#questionSeven").val(),
+        $("#questionEight").val(),
+        $("#questionNine").val(),
+        $("#questionTen").val()
+        ]
+    };
+   //console.log(applications[0].name + "this is it")
+   console.log(applications.name + "this is it")
+    
+    $.post("/api/applications.js", applications, function(data) {
+            
+        $("#match-name").text(applications.name);
+        // Show the modal with the best match
+        $("#results-modal").modal("toggle");
+        console.log(data[1].name + " data[1]")
+
+
+        $("#name").val(""),
+        $("#questionOne").val("");
+        $("#questionTwo").val("");
+        $("#questionThree").val("");
+        $("#questionFour").val("");
+        $("#questionFive").val("");
+        $("#questionSix").val("");
+        $("#questionSeven").val("");
+        $("#questionEight").val("");
+        $("#questionNine").val("");
+        $("#questionTen").val("");
+
+
+        
+       
+    });
+});
+
+</script>
+</html>
