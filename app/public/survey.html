@@ -38,11 +38,15 @@
                             </div>
                             <div class="form-group">
                                 <label for="Name">Position</label>
-                                <input type="text" class="form-control" id="name" placeholder="Position">
+                                <input type="text" class="form-control" id="Position" placeholder="Position">
                             </div>
                             <div class="form-group">
                                 <label for="Name">Applied</label>
-                                <input type="text" class="form-control" id="name" placeholder="Applied">
+                                <input type="text" class="form-control" id="Applied" placeholder="Applied">
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Experience</label>
+                                <input type="text" class="form-control" id="Experience" placeholder="Experience (In Years)">
                             </div>
                             <div class="form-group">
                                 <label for="Name">Availability</label>
@@ -157,8 +161,8 @@
                                 <label for="imageSrc">Link to Photo Image (Required)</label>
                                 <input type="text" class="form-control" id="imageSrc" placeholder="Link To Photo Image">
                             </div> -->
-                            <p>Question 1</p>
-                                <p>Have you ever been convicted of a felony?</p>
+                            
+                            <p>Have you ever been convicted of a felony?</p>
                             <div class="form-row align-items-center">
                                 
                                     <label class="mr-sm-2" for="inlineFormCustomSelect"></label>
@@ -234,20 +238,25 @@
         position: $("#Position").val(),
         applied: $("#Applied").val(),
         experience: $("#Experience").val(),
-        convictedFelon: $("#questionOne").val(),
-        availability: [
-        $("#Monday").val(),
-        $("#Tuesday").val(),
-        $("#Wednesday").val(),
-        $("#Thursday").val(),
-        $("#Friday").val(),
-        $("#Saturday").val(),
-        $("#Sunday").val()
+        availability: {
+        Mon: $("#Monday").val(),
+        Tue: $("#Tuesday").val(),
+        Wed: $("#Wednesday").val(),
+        Thur: $("#Thursday").val(),
+        Fri: $("#Friday").val(),
+        Sat: $("#Saturday").val(),
+        Sun: $("#Sunday").val()
+        },
+        questions: [
+            {
+                text: "Have you ever been convicted of a feloni?",
+                answer: $("#questionOne").val()
+            },
         ]
 
     };
    //console.log(applications[0].name + "this is it")
-   console.log(applications.name + "this is it")
+   console.log("  applications  " + applications.name + applications.position + applications.applied );
     
     $.post("/api/applications.js", applications, function(data) {
             
@@ -257,21 +266,25 @@
         console.log(data[1].name + " data[1]")
 
 
-        $("#name").val(""),
-        $("#questionOne").val("");
-        $("#position").val("");
-        $("#applied").val("");
-        $("#experience").val("");
-        availability: [
-            $("#Monday").val(),
-            $("#Tuesday").val(),
-            $("#Wednesday").val(),
-            $("#Thursday").val(),
-            $("#Friday").val(),
-            $("#Saturday").val(),
-            $("#Sunday").val()
+        name: $("#name").val();
+        position: $("#Position").val();
+        applied: $("#Applied").val();
+        experience: $("#Experience").val();
+        availability: {
+            Mon: $("#Monday").val();
+            Tue: $("#Tuesday").val();
+            Wed: $("#Wednesday").val();
+            Thur: $("#Thursday").val();
+            Fri: $("#Friday").val();
+            Sat: $("#Saturday").val();
+            Sun: $("#Sunday").val();
+        };
+        questions: [
+            {
+                text: "Have you ever been convicted of a felony?",
+                answer: $("#questionOne").val()
+            },
         ]
-
         
        
     });

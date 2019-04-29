@@ -30,7 +30,6 @@ function apiRouteExport(app) {
         applicationArr.push(req.body);
         res.json(applicationArr);
         var userInput = req.body;
-
         parseInt(userInput.scores);
         
         var ourScores = applicationArr[applicationArr.length - 1].scores;
@@ -40,33 +39,33 @@ function apiRouteExport(app) {
             var matchArr = [];
             for (var i = 0; i < applicationArr.length -1; i ++) {
                 
-                    // Initialize our difference value.
-                    var totalDiff = 0;
+                //     // Initialize our difference value.
+                //     var totalDiff = 0;
 
-                    // Grab the scores of this particular friend.
-                    var friendScores = applicationArr[i].scores;
+                //     // Grab the scores of this particular friend.
+                //     var friendScores = applicationArr[i].scores;
 
-                    // Determine totalDifference for this friend.
-                    for (var t = 0; t < friendScores.length; t++) {
-                        var ourScore = parseInt(ourScores[t]);
-                        var friendScore = parseInt(friendScores[t]);
-                        var diff = Math.abs(ourScore - friendScore);
-                        totalDiff += diff;
+                //     // Determine totalDifference for this friend.
+                //     for (var t = 0; t < friendScores.length; t++) {
+                //         var ourScore = parseInt(ourScores[t]);
+                //         var friendScore = parseInt(friendScores[t]);
+                //         var diff = Math.abs(ourScore - friendScore);
+                //         totalDiff += diff;
                         
-                    }
-                   matchArr[i] = totalDiff;
-                console.log(totalDiff)
-                console.log(matchArr[i])
+                //     }
+                //    matchArr[i] = totalDiff;
+                // console.log(totalDiff)
+                // console.log(matchArr[i])
 
-                if (matchArr[i] < matchArr[i -1]) {
-                    friendFound = applicationArr[i];
+                // if (matchArr[i] < matchArr[i -1]) {
+                //     friendFound = applicationArr[i];
                     
-                }
+                // }
+                //friendFound = applicationArr[i];
+                
             }
-            console.log(friendFound.name + "///////")
             return {
-                "name": friendFound.name,
-                "photo": friendFound.photo
+                applicationArr//"name": friendFound.name,
             };
         }
         findFriend();
